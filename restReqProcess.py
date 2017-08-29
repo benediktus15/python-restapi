@@ -29,7 +29,7 @@ class ReqProcess(object):
 				'alamat':each_nasabah['alamat'],
 				'aset':each_nasabah['aset'],
 				'status':each_nasabah['status'],
-				'id':each_nasabah['_id']
+				'id':str(each_nasabah['_id'])
 				})
 
 		return l
