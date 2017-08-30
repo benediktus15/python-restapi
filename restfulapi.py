@@ -18,6 +18,14 @@ def returnDetail(strid):
 	detail_nasabah = restReq.find_nasabah(strid)
 	return jsonify({'nasabah' : detail_nasabah})
 
+@app.route('/framework/add', methods=['POST'])
+def returnAdd():
+	name = request.json['nama']
+	address = request.json['alamat']
+	insert_nasabah = restReq.insert_nasabah(name,address)
+	return jsonify({'nasabah' : insert_nasabah})
+
+
 # S: database
 connection_string = "mongodb://localhost:27017" #connection untuk lokal mongo
 connection = pymongo.MongoClient(connection_string) #membuat koneksi pymongo

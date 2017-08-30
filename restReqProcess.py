@@ -33,3 +33,20 @@ class ReqProcess(object):
 				})
 
 		return l
+
+	def insert_nasabah(self,nama,alamat):
+		new_nasabah = {
+					'nama' : nama,
+					'alamat' : alamat
+					}
+
+		nasabah_id = self.nasabah.insert(new_nasabah)
+		nasabah_baru = self.nasabah.find_one({"_id" : nasabah_id})
+
+		output = ({
+			'nama' : nasabah_baru['nama'],
+			'alamat' : nasabah_baru['alamat'],
+			'id' : str(nasabah_baru['_id'])
+			})
+
+		return output
