@@ -13,10 +13,10 @@ def returnALL():
 	nasabah_list = restReq.find_nasabah()
 	return jsonify({'nasabah' : nasabah_list})
 
-# @app.route('/framework/detail', methods=['GET'])
-# def returnALL():
-# 	nasabah_list = restReq.find_nasabah()
-# 	return jsonify({'nasabah' : nasabah_list})
+@app.route('/framework/detail/<strid>', methods=['GET'])
+def returnDetail(strid):
+	detail_nasabah = restReq.find_nasabah(strid)
+	return jsonify({'nasabah' : detail_nasabah})
 
 # S: database
 connection_string = "mongodb://localhost:27017" #connection untuk lokal mongo
