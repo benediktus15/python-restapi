@@ -20,15 +20,15 @@ class ReqProcess(object):
 		for each_nasabah in q:
 			l.append({
 				'nama':each_nasabah['nama'], 
-				'email':each_nasabah['email'], 
-				'telepon':each_nasabah['telepon'],
-				'tabungan':each_nasabah['tabungan'],
-				'umur':each_nasabah['umur'],
-				'gender':each_nasabah['gender'],
-				'instansi':each_nasabah['instansi'],
+				# 'email':each_nasabah['email'], 
+				# 'telepon':each_nasabah['telepon'],
+				# 'tabungan':each_nasabah['tabungan'],
+				# 'umur':each_nasabah['umur'],
+				# 'gender':each_nasabah['gender'],
+				# 'instansi':each_nasabah['instansi'],
 				'alamat':each_nasabah['alamat'],
-				'aset':each_nasabah['aset'],
-				'status':each_nasabah['status'],
+				# 'aset':each_nasabah['aset'],
+				# 'status':each_nasabah['status'],
 				'id':str(each_nasabah['_id'])
 				})
 
