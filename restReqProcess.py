@@ -50,3 +50,16 @@ class ReqProcess(object):
 			})
 
 		return output
+
+	def edit_nasabah(self,strid,nama,alamat):
+		whereid = {"_id":ObjectId(strid)}
+		editnasabah = {'nama':nama,
+						'alamat':alamat}
+		self.nasabah.update(whereid,editnasabah)
+		nasabah_edit = self.nasabah.find_one({"_id":ObjectId(strid)})
+		output = ({
+			'nama' : nasabah_edit['nama'],
+			'alamat' : nasabah_edit['alamat'],
+			'id' : str(nasabah_edit['_id'])
+			})
+		return output

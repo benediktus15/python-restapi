@@ -20,11 +20,18 @@ def returnDetail(strid):
 
 @app.route('/framework/add', methods=['POST'])
 def returnAdd():
-	name = request.json['nama']
-	address = request.json['alamat']
-	insert_nasabah = restReq.insert_nasabah(name,address)
+	nama = request.json['nama']
+	alamat = request.json['alamat']
+	insert_nasabah = restReq.insert_nasabah(nama,alamat)
 	return jsonify({'nasabah' : insert_nasabah})
+	# test: postman json {'nama' : 'siapa', 'alamat' : 'yogya'}
 
+@app.route('/framework/edit/<strid>', methods=['PUT'])
+def returnEdit(strid):
+	nama = request.json['nama']
+	alamat = request.json['alamat']
+	edit_nasabah = restReq.edit_nasabah(strid,nama,alamat)
+	return jsonify({'nasabah' : edit_nasabah})
 
 # S: database
 connection_string = "mongodb://localhost:27017" #connection untuk lokal mongo
