@@ -26,12 +26,18 @@ def returnAdd():
 	return jsonify({'nasabah' : insert_nasabah})
 	# test: postman json {'nama' : 'siapa', 'alamat' : 'yogya'}
 
-@app.route('/framework/edit/<strid>', methods=['PUT'])
+@app.route('/framework/edit/<strid>', methods=['PUT']) # can use GET as well
 def returnEdit(strid):
 	nama = request.json['nama']
 	alamat = request.json['alamat']
 	edit_nasabah = restReq.edit_nasabah(strid,nama,alamat)
 	return jsonify({'nasabah' : edit_nasabah})
+	# test: postman put url edit/<id>, body json {'nama' : 'siapa', 'alamat' : 'yogya'}
+
+@app.route('/framework/delete/<strid>', methods=['DELETE']) # can use GET as well
+def returnDelete(strid):
+	delete_nasabah = restReq.delete_nasabah(strid)
+	return jsonify({'nasabah' : delete_nasabah})
 
 # S: database
 connection_string = "mongodb://localhost:27017" #connection untuk lokal mongo

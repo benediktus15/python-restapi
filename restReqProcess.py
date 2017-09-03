@@ -63,3 +63,9 @@ class ReqProcess(object):
 			'id' : str(nasabah_edit['_id'])
 			})
 		return output
+
+	def delete_nasabah(self,strid):
+		whereid = {"_id":ObjectId(strid)}
+		self.nasabah.remove(whereid)
+		load_data = self.find_nasabah()
+		return load_data
