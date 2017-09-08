@@ -28,3 +28,12 @@ Flask via:
 Bottle via:
 
     $ pip install bottle
+
+### Run API/Web:
+Run the API via:
+
+    $ python restfulapi.py
+
+Run the Web via:
+
+    $ python webindex.py
